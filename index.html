@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex flex-col md:flex-row">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="w-full md:w-64 bg-blue-900 text-white h-screen md:h-auto fixed md:relative top-0 left-0 md:left-0 md:top-0 z-10 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+            <div class="p-4 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5dNAD1P563iM-v3YS0VJWRW-N6d4nJhD6dQ&s" alt="Logo" class="w-10 h-10 mr-3">
+                    <span class="text-xl font-bold">Alfurqan</span>
+                </div>
+                <!-- Close Button (Visible on Mobile) -->
+                <button id="close-sidebar" class="md:hidden text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <ul class="mt-6">
+                <li><a href="#" data-content="dashboard" class="p-4 flex items-center hover:bg-blue-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4V3h4v7h4V3h4v7h4V3" /></svg>Dashboard</a></li>
+                <li><a href="#" data-content="students" class="p-4 flex items-center hover:bg-blue-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l-6 6m6-6l6 6M6 8l6-6m0 0l6 6M12 14v7" /></svg>Students</a></li>
+                <li><a href="#" data-content="classes" class="p-4 flex items-center hover:bg-blue-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 3v18m0 0h12m-12 0H6M6 3h12M6 21h12" /></svg>Classes</a></li>
+                <li><a href="#" data-content="teachers" class="p-4 flex items-center hover:bg-blue-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 1v22m0 0l-8-8m8 8l8-8M12 23V1" /></svg>Teachers</a></li>
+                <li><a href="#" data-content="reports" class="p-4 flex items-center hover:bg-blue-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h18M3 12h18M3 18h18" /></svg>Reports</a></li>
+                <li><a href="#" data-content="settings" class="p-4 flex items-center hover:bg-blue-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 1v22m0 0l-8-8m8 8l8-8M12 23V1" /></svg>Settings</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main id="main-content" class="flex-1 p-6 md:ml-64 transition-all duration-300">
+            <header class="flex justify-between items-center mb-6">
+                <!-- Menu Toggle for Mobile -->
+                <button id="menu-toggle" class="md:hidden text-blue-900 hover:text-blue-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+                <h1 id="main-title" class="text-2xl font-bold">Dashboard</h1>
+            </header>
+
+            <!-- Dynamic Content Area -->
+            <div id="content-area">
+                <div class="bg-white p-6 rounded-lg shadow-lg transition-content">
+                    <h2 id="section-title" class="text-lg font-semibold mb-4">Welcome to the Dashboard</h2>
+                    <p id="section-info">Select an option from the sidebar to view more information.</p>
+
+                    <!-- Example Form -->
+                    <form id="example-form" class="mt-6 space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 sm:text-sm" placeholder="Enter your name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 sm:text-sm" placeholder="Enter your email" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 sm:text-sm" placeholder="Enter your message" required></textarea>
+                        </div>
+                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit</button>
+                    </form>
+
+                    <!-- Success Message -->
+                    <p id="form-message" class="mt-4 text-green-600 hidden">Form submitted successfully!</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
